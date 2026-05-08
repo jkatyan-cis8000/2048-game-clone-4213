@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #faf8ef;
+    color: #776e65;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.game-container {
+    width: 500px;
+    max-width: 95%;
+    background: #bbada0;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 60px;
+    color: #776e65;
+    font-weight: bold;
+}
+
+.score-container {
+    background: #bbada0;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    min-width: 80px;
+}
+
+.score-label {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #eee4da;
+}
+
+.score-value {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.game-board {
+    background: #bbada0;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.grid-cell {
+    width: 100px;
+    height: 100px;
+    background: #cdc1b4;
+    border-radius: 5px;
+}
+
+.tile {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+    font-weight: bold;
+    transition: all 0.15s ease-in-out;
+    animation: appear 0.2s ease;
+}
+
+.tile-2 { background: #eee4da; color: #776e65; }
+.tile-4 { background: #ede0c8; color: #776e65; }
+.tile-8 { background: #f2b179; color: #f9f6f2; }
+.tile-16 { background: #f59563; color: #f9f6f2; }
+.tile-32 { background: #f67c5f; color: #f9f6f2; }
+.tile-64 { background: #f65e3b; color: #f9f6f2; }
+.tile-128 { background: #edcf72; color: #f9f6f2; font-size: 35px; }
+.tile-256 { background: #edcc61; color: #f9f6f2; font-size: 35px; }
+.tile-512 { background: #edc850; color: #f9f6f2; font-size: 35px; }
+.tile-1024 { background: #edc53f; color: #f9f6f2; font-size: 28px; }
+.tile-2048 { background: #edc22e; color: #f9f6f2; font-size: 28px; }
+.tile-super { background: #3c3a32; color: #f9f6f2; font-size: 24px; }
+
+@keyframes appear {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+}
+
+@keyframes merge {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.tile-merged {
+    animation: merge 0.2s ease;
+}
+
+.game-message {
+    text-align: center;
+    margin-top: 20px;
+    display: none;
+}
+
+.game-message.active {
+    display: block;
+}
+
+#message-text {
+    font-size: 40px;
+    font-weight: bold;
+    color: #776e65;
+    margin-bottom: 20px;
+}
+
+#restart-btn {
+    background: #8f7a66;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#restart-btn:hover {
+    background: #9f8b77;
+}
+
+.controls {
+    margin-top: 20px;
+    text-align: center;
+    color: #776e65;
+}
+
+.controls strong {
+    color: #8f7a66;
+}

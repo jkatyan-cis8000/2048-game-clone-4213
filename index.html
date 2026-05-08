@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048 Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <header>
+            <h1>2048</h1>
+            <div class="score-container">
+                <div class="score-label">Score</div>
+                <div class="score-value" id="score">0</div>
+            </div>
+            <div class="score-container">
+                <div class="score-label">Best</div>
+                <div class="score-value" id="best-score">0</div>
+            </div>
+        </header>
+        
+        <div class="game-board" id="game-board">
+            <div class="grid-container" id="grid-container">
+                <!-- Grid cells will be generated here -->
+            </div>
+        </div>
+        
+        <div class="game-message" id="game-message">
+            <p id="message-text"></p>
+            <button id="restart-btn">Try Again</button>
+        </div>
+        
+        <div class="controls">
+            <p>Use <strong>Arrow Keys</strong> to move tiles</p>
+        </div>
+    </div>
+    
+    <script src="tile.js"></script>
+    <script src="game.js"></script>
+    <script src="input.js"></script>
+    <script src="ui.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
